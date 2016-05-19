@@ -3,7 +3,7 @@ import {reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import surveyValidation from './surveyValidation';
-import * as surveyActions from 'redux/modules/survey';
+import * as surveyActions from 'myredux/modules/survey';
 
 function asyncValidate(data, dispatch, {isValidEmail}) {
   if (!data.email) {
@@ -47,7 +47,7 @@ class SurveyForm extends Component {
       pristine,
       valid
       } = this.props;
-    const styles = require('./SurveyForm.scss');
+    const styles = require('./SurveyForm.scss') || {};
     const renderInput = (field, label, showAsyncValidating) =>
       <div className={'form-group' + (field.error && field.touched ? ' has-error' : '')}>
         <label htmlFor={field.name} className="col-sm-2">{label}</label>

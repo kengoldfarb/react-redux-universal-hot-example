@@ -6,8 +6,8 @@ import Navbar from 'react-bootstrap/lib/Navbar';
 import Nav from 'react-bootstrap/lib/Nav';
 import NavItem from 'react-bootstrap/lib/NavItem';
 import Helmet from 'react-helmet';
-import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
-import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
+import { isLoaded as isInfoLoaded, load as loadInfo } from 'myredux/modules/info';
+import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'myredux/modules/auth';
 import { InfoBar } from 'components';
 import { push } from 'react-router-redux';
 import config from '../../config';
@@ -59,7 +59,7 @@ export default class App extends Component {
 
   render() {
     const {user} = this.props;
-    const styles = require('./App.scss');
+    const styles = require('./App.scss') || {};
 
     return (
       <div className={styles.app}>

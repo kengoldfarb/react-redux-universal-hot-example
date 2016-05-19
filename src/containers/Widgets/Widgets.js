@@ -1,8 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import Helmet from 'react-helmet';
 import {connect} from 'react-redux';
-import * as widgetActions from 'redux/modules/widgets';
-import {isLoaded, load as loadWidgets} from 'redux/modules/widgets';
+import * as widgetActions from 'myredux/modules/widgets';
+import {isLoaded, load as loadWidgets} from 'myredux/modules/widgets';
 import {initializeWithKey} from 'redux-form';
 import { WidgetForm } from 'components';
 import { asyncConnect } from 'redux-async-connect';
@@ -44,7 +44,7 @@ export default class Widgets extends Component {
     if (loading) {
       refreshClassName += ' fa-spin';
     }
-    const styles = require('./Widgets.scss');
+    const styles = require('./Widgets.scss') || {};
     return (
       <div className={styles.widgets + ' container'}>
         <h1>
@@ -103,4 +103,3 @@ export default class Widgets extends Component {
     );
   }
 }
-
