@@ -28,7 +28,7 @@
     "start-prod": "better-npm-run start-prod",
     "start-prod-api": "better-npm-run start-prod-api",
     "build": "better-npm-run build",
-    "build-prod": "better-npm-run build && babel src -d dist --copy-files",
+    "build-prod": "babel src -d dist --copy-files && better-npm-run build",
     "postinstall": "npm run build-prod",
     "lint": "eslint -c .eslintrc src api",
     "start-dev": "better-npm-run start-dev",
